@@ -10,7 +10,7 @@ const morgan = require('morgan');
 const app = express();
 let httpServer = http.createServer(app);
 
-/** Configure express to use body parser for form data */
+/** Configure express to use body parser s form data */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
