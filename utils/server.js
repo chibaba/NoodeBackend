@@ -1,7 +1,7 @@
 const Logger = require('./logger');
 
 let logger = new Logger('server');
-let port = process.env.PORT || 8000;
+let port =  8000;
 
 /**
  * This binds the server to a port by incrementing the port numbers if they are in use

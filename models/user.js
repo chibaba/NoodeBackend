@@ -25,16 +25,7 @@ module.exports = class user {
         res.json(token);
     }
 
-    /**
-     * Responsible for Applying patches
-     * @param {object} req - The request object. This contains a property called 'body'.
-     * This body property is an object in the format { 
-     *      jsonObj: {"name": "chinedu",  "city": "Abuja"}, 
-     *      patchObj: {"op": "replace", "path": "/name", "value": "onyeoka"}
-     * }
-     * @param {object} res - The response object
-     * @param {function} next - The next middleware to be called, if any
-     */
+ 
     static applyPatch(req, res, next) {
         if (! req.body.jsonObj || ! req.body.patchObj) {
             return res.json({error: 'JSON Object and JSON Patch Object are both required'});
