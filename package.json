@@ -11,7 +11,7 @@
     "precommit": "pretty-quick --stag"
   },
   "keywords": [],
-  "author": "onyeoka",
+  "author": "chinedu.onyeoka@gmail.com@github.com",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
