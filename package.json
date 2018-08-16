@@ -4,21 +4,21 @@
   "description": "",
   "main": "start.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js "
+    "test": "nyc --reporter=html --reporter=text mocha",
+    "start": "node index.js ",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && CODECOV_TOKEN=eb5f30f4-b8fa-4d49-862c-c2373013c16b codecov",
+    "coverage-dev": "nyc --require babel-core/register mocha ./test/**/*.spec.js --exit -w",
+    "precommit": "pretty-quick --stag"
   },
   "keywords": [],
   "author": "onyeoka",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
-    "connect-mongo": "^2.0.1",
     "express": "^4.16.3",
     "jimp": "^0.3.5",
     "jsonpatch": "^3.0.1",
     "jsonwebtoken": "^8.3.0",
-    "mongoose": "^5.2.8",
     "morgan": "^1.9.0",
     "nodemon": "^1.18.3",
     "passport": "^0.4.0",
@@ -31,6 +31,12 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0",
-    "rimraf": "^2.6.2"
+    "chai": "^4.1.2",
+    "codecov": "^3.0.4",
+    "mocha": "^5.2.0",
+    "nodejs-dashboard": "^0.4.3",
+    "nyc": "^12.0.2",
+    "rimraf": "^2.6.2",
+    "supertest": "^3.1.0"
   }
 }
