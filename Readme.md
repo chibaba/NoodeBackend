@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/chibaba/https://github.com/chibaba/NoodeBackend.svg?branch=master)]
-(https://travis-ci.org/https://github.com/chibaba/NoodeBackend)
+
 
 
 
