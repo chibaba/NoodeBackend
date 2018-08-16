@@ -1,41 +1,29 @@
- const express = require( 'express' );
+
+
+/** Require modules */
+const http = require('http');
+const express = require('express');
 const bodyParser = require('body-parser');
-const mongoose= require('mongoose');
+const morgan = require('morgan');
 
-
-
-const passport =require('passport');
-const config = require('./config/main')
-const morgan  = require('morgan');
-const User = require('./models/user');
-
-
-
-const port = 8000;
+/** Initialize express application */
 const app = express();
+let httpServer = http.createServer(app);
 
-//jwt stuff
-const jwt = require("jsonwebtoken");
-
-
-
-//use body-parser to make a request for our login
-app.use(bodyParser.urlencoded({extended: false }));
+/** Configure express to use body parser for form data */
 app.use(bodyParser.json());
-app.use(passport.initialize());
-app.use(morgan('dev'));
-mongoose.connect(config.database)
+app.use(bodyParser.urlencoded({ extended: true }));
 
-require('./config/passport')(passport);
-require('./routes/routes');
+/** Export app for use in other files */
+exports.app = app;
 
-//const app = express.Router()
-// route
-app.get('/', (req, res) => {
-  res.send('Welcome to home page')
+/** Set the application {@link api/routes.js} */
+app.use('', require('./routes/routes').router);
+
+/** Handles 404 errors */
+app.use((req, res, next) => {
+    res.status(404).json({error: `Cannot ${req.method} ${req.originalUrl}`});
 });
 
-
-
-app.listen(port);
-console.log('We are running live on  port' +  port + '.');
+/** Start the server {@link utils/server.js} */
+require('./utils/server').start(httpServer)
