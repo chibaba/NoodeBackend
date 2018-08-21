@@ -6,7 +6,7 @@
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha",
     "start": "node index.js ",
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && CODECOV_TOKEN=49b9482b-bebf-488a-90c3-16b3e77820c codecov",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && CODECOV_TOKEN=49b9482b-bebf-488a-90c3-16b3e77820cc codecov",
     "coverage-dev": "nyc --require babel-core/register mocha ./test/**/*.spec.js --exit -w",
     "precommit": "pretty-quick --stag"
   },
