@@ -2,7 +2,9 @@
 
 
 
-[![codecov](https://codecov.io/gh/https://github.com/chibaba/NoodeBackend/branch/master/graph/badge.svg)](https://codecov.io/gh/chibaba/https://github.com/chibaba/NoodeBackend)
+[![codecov](https://codecov.io/gh/https://github.com/chibaba/NoodeBackend/branch/master/graph/badge.svg)]
+ [![codecov](https://codecov.io/gh/chibaba/NoodeBackend/branch/master/graph/badge.svg)](https://codecov.io/gh/chibaba/NoodeBackend)
+(https://codecov.io/gh/chibaba/https://github.com/chibaba/NoodeBackend)
 
 ## A stateless Authentication with Nodejs
 
